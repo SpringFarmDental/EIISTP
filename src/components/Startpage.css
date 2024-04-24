@@ -1,0 +1,75 @@
+.startpage{
+    background-image: url('../images/hcibg.png');
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.startpageouter {
+    width: 80vw;
+    height: 80vh;
+    background-color: #050505;
+    position: fixed;
+    border: 7px solid white;
+    margin: auto; /* Center the div */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+
+.startpagenavbar{
+    position: sticky;
+    padding: 19px;
+    background-color: #000;
+}
+.startpagenavbar a{
+    text-decoration: none;
+    color: white;
+    margin: 10%;
+}
+
+.abouts {
+    display: flex;
+    height: 70vh;
+    align-items: center; 
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.abouts img {
+    top: 0;
+    width: auto; 
+    height: 50vh; 
+    
+}
+
+
+.abtcontent{
+    max-width: 500px;
+    padding: 20px;
+}
+
+.abtcontent h1{
+    font-size: 4rem;
+}
+.abtcontent h2{
+    color: rgb(186, 186, 186);
+}
+
+.abtcontent button{
+    background-color: #6c6c6c;
+    border: 5px solid white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+    font-weight: 900;
+    margin-top: 50px;
+
+}

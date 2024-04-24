@@ -1,0 +1,85 @@
+#mood button{
+    background-color: #6c6c6c;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: white;
+    font-weight: 900;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+#iter1{
+    text-align: center;
+}
+
+#hownow{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+#hownow  button{
+    background-color: #6c6c6c;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: white;
+    font-weight: 900;
+    margin-top: 5%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+.hownowinner{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: rgb(48, 48, 48);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.6rem;
+}
+.hownowinner1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 30%;
+    background-color: rgb(48, 48, 48);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.6rem;
+}
+
+
+.startpageouters {
+    width: 80vw;
+    height: 80vh;
+    background-color: #050505;
+    position: fixed;
+    border: 7px solid white;
+    margin: auto; /* Center the div */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+    overflow: scroll;
+    font-size: 1.4rem;
+    padding: 2%;
+  }
+  button{
+    background-color: #6c6c6c;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: white;
+    font-weight: 900;
+    margin-top: 5%;
+    cursor: pointer;
+}

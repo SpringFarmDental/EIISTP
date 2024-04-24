@@ -1,0 +1,80 @@
+/* questionnaire.css */
+.questionnaire {
+  margin-top: 20px;
+}
+
+.startpage {
+  background-image: url('../images/hcibg.png');
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+}
+
+.questionnaire{
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.questionnaire label {
+  margin-bottom: 5px;
+  font-size: 2rem;
+  display: flex;
+  padding: 10px;
+
+}
+
+.questionnaire select {
+  background-color: #6c6c6c6b;
+  font: 900;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  color: white;
+  font-weight: 900;
+  padding: 5px;
+  width:max-content;
+  margin-left: 10px;
+  border: 0;
+}
+
+
+.questionnaire  button{
+  background-color: #6c6c6c;
+  border: 5px solid white;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: white;
+  font-weight: 900;
+  margin: 40px auto;
+  width: 15%;
+  font-size: 1.3rem;
+}
+.questionnaire button:hover {
+  background-color: #252525;
+  cursor: pointer;
+}
+
+
+.startpageouterq {
+  width: 80vw;
+  height: 80vh;
+  background-color: #050505;
+  position: fixed;
+  border: 7px solid white;
+  margin: auto; /* Center the div */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  overflow: hidden;
+}
+
+
+.startpageouterq h3{
+  text-align: center;
+  font-size: 4rem;
+  margin: 50px 0px;
+}
+
