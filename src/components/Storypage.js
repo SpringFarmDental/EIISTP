@@ -1,8 +1,6 @@
-// Storypage.js
-
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import './Storypage.css'
+import './Storypage.css';
 import { Link } from 'react-router-dom';
 
 const Storypage = () => {
@@ -36,7 +34,6 @@ const Storypage = () => {
             const posttext = "brief story introduction use fictional characters to describe the plot which should be related to mood and make it open ended with three dots in end";
 
             var sendtoapi = pretext + " " + mood + " " + posttext;
-            // document.getElementById('moodtest').innerText = sendtoapi;
 
             const response = await axios({
                 url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyATwCyRPGuBJAPckf2QPEjS0rMkMpoTQSg",
@@ -50,8 +47,6 @@ const Storypage = () => {
                         },
                     ]
                 }
-
-
             });
 
             const apiResponse = response.data.candidates[0].content.parts[0].text;
@@ -65,7 +60,6 @@ const Storypage = () => {
         }
     }
 
-
     const handleRatingChange = (e) => {
         setUserRating(e.target.value);
     };
@@ -74,7 +68,6 @@ const Storypage = () => {
     };
 
     async function seciter() {
-
         var iter = document.getElementById('iter1').innerText;
         setIteration(iter);
 
@@ -96,13 +89,11 @@ const Storypage = () => {
             }
         });
 
-
         const apiResponse = response.data.candidates[0].content.parts[0].text;
         setStoryContentsec(apiResponse);
         setShowRating1(true)
 
         document.getElementById('iter1').style.display = "none";
-
     }
 
     async function thirditer() {
@@ -140,11 +131,8 @@ const Storypage = () => {
         setLastcreated(true)
     }
 
-
     async function getSentiments() {
-
         var finalStory = document.getElementById('moodtestfinal').innerText;
-        console.log(finalStory)
 
         const posttext = "this is a story written by  user, analyse the story and based on it detect different emotions of user and percentage of those emotions, also tell users positive current state at the end in two words";
 
@@ -165,35 +153,26 @@ const Storypage = () => {
         });
 
         const emotionsApi = response.data.candidates[0].content.parts[0].text;
-        console.log(emotionsApi)
-
         const analysedEmotions = JSON.stringify(emotionsApi);
         localStorage.setItem('Emotions', analysedEmotions);
-  
+        window.location.href = '/Analysis'; // Redirect to the analysis page
     }
-    
 
     return (
         <>
-
             <div className='startpage'></div>
-
             <div className='startpageouters'>
                 <div id='iter1'>
                     <div id='mood'>
                         <p>
                             It seems you're experiencing a range of emotions today. You're feeling <strong>{submittedData.feelingToday}</strong>, <strong>{submittedData.moodAboutDay}</strong> about the day, and <strong>{submittedData.feelingAboutWeek}</strong> about the week. Currently, you're feeling <strong>{submittedData.currentEmotion}</strong>. Your description of feeling is <strong>{submittedData.descriptionOfFeeling}</strong>. Let's create a story that suits you best.
                         </p>
-
                         <button onClick={sendMood}>Create Story</button>
                     </div>
-
                     <div id='moodtest' >{storyContent}</div>
-
                     {showRating && (
                         <div id='hownow'>
                             <div className='hownowinner'>
-
                                 <label htmlFor="rating">Do you like the story
                                     <input
                                         type="range"
@@ -211,15 +190,9 @@ const Storypage = () => {
                         </div>
                     )}
                 </div>
-
-
-                {/* <div id='showid1'>{iteration}</div> */}
-
-
                 <div id='iter2'>
                     <div id='moodtest'></div>
                     <div id='storybegining'>{storyContentsec}</div>
-
                     {showRating1 && (
                         <div id='hownow'>
                             <div className='hownowinner1'>
@@ -239,20 +212,17 @@ const Storypage = () => {
                             </div>
                         </div>
                     )}
-
-
                 </div>
-
-
-                {/* <div id='showid2'>{iteration1}</div> */}
-
                 {lastcreated && (  
                     <>
-                    <div id='moodtestfinal'>{storyContentthird}</div>
-
-                    <Link to='/Analysis'>
-                    <button onClick={getSentiments}>ANALYSE EMOTIONS</button>
-                    </Link>
+                        <div id='moodtestfinal'>{storyContentthird}</div>
+                        {localStorage.getItem('Emotions') ? (
+                            <Link to='/Analysis'>
+                                <button>ANALYSE EMOTIONS</button>
+                            </Link>
+                        ) : (
+                            <button onClick={getSentiments}>ANALYSE EMOTIONS</button>
+                        )}
                     </>
                 )}
             </div>
